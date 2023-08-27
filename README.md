@@ -1,2 +1,2 @@
 # Hade
-基于golang标准库开发一个HTTP框架
+基于Go语言开发一个Web框架
