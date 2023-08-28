@@ -13,6 +13,7 @@ func FooControllerHandler(c *framework.Context) error {
 
 	panicChan := make(chan interface{}, 1)
 	durationCtx, cancel := context.WithTimeout(c.BaseContext(), time.Duration(1*time.Second))
+	// 这里记得当所有事情处理结束后调用 cancel，告知 durationCtx 的后续 Context 结束
 	defer cancel()
 	go func() {
 		defer func() {
@@ -24,6 +25,7 @@ func FooControllerHandler(c *framework.Context) error {
 		time.Sleep(10 * time.Second)
 		c.Json(200, "ok")
 
+		// 新的 goroutine 结束的时候通过一个 finish 通道告知父 goroutine
 		finish <- struct{}{}
 	}()
 	select {
