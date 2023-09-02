@@ -20,7 +20,6 @@ func NewCore() *Core {
 	router["POST"] = NewTree()
 	router["PUT"] = NewTree()
 	router["DELETE"] = NewTree()
-	return &Core{router: router}
 
 	return &Core{router: router}
 }
