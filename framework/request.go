@@ -128,7 +128,7 @@ func (ctx *Context) Query(key string) interface{} {
 	return nil
 }
 
-// 获取请求地址中所有参数
+// QueryAll 获取请求地址中所有参数
 func (ctx *Context) QueryAll() map[string][]string {
 	if ctx.request != nil {
 		return map[string][]string(ctx.request.URL.Query())
@@ -181,7 +181,7 @@ func (ctx *Context) ParamString(key string, def string) (string, bool) {
 	return def, false
 }
 
-// 获取路由参数
+// Param 获取路由参数
 func (ctx *Context) Param(key string) interface{} {
 	if ctx.params != nil {
 		if val, ok := ctx.params[key]; ok {
@@ -191,7 +191,7 @@ func (ctx *Context) Param(key string) interface{} {
 	return nil
 }
 
-// #region form post
+// FormInt #region form post
 func (ctx *Context) FormInt(key string, def int) int {
 	params := ctx.FormAll()
 	if vals, ok := params[key]; ok {
@@ -253,7 +253,7 @@ func (ctx *Context) BindJson(obj interface{}) error {
 	return nil
 }
 
-// xml body
+// BindXml xml body
 func (ctx *Context) BindXml(obj interface{}) error {
 	if ctx.request != nil {
 		body, err := ioutil.ReadAll(ctx.request.Body)
@@ -272,7 +272,7 @@ func (ctx *Context) BindXml(obj interface{}) error {
 	return nil
 }
 
-// 其他格式
+// GetRawData 其他格式
 func (ctx *Context) GetRawData() ([]byte, error) {
 	if ctx.request != nil {
 		body, err := ioutil.ReadAll(ctx.request.Body)
@@ -285,7 +285,7 @@ func (ctx *Context) GetRawData() ([]byte, error) {
 	return nil, errors.New("ctx.request empty")
 }
 
-// 基础信息
+// Uri 基础信息
 func (ctx *Context) Uri() string {
 	return ctx.request.RequestURI
 }
@@ -310,7 +310,7 @@ func (ctx *Context) ClientIp() string {
 	return ipAddress
 }
 
-// header
+// Headers header
 func (ctx *Context) Headers() map[string][]string {
 	return ctx.request.Header
 }
@@ -323,7 +323,7 @@ func (ctx *Context) Header(key string) (string, bool) {
 	return vals[0], true
 }
 
-// cookie
+// Cookies cookie
 func (ctx *Context) Cookies() map[string]string {
 	cookies := ctx.request.Cookies()
 	ret := map[string]string{}
