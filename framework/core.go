@@ -62,6 +62,7 @@ func (c *Core) Delete(url string, handlers ...ControllerHandler) {
 	}
 }
 
+// Group 实现IGroup接口
 func (c *Core) Group(prefix string) IGroup {
 	return NewGroup(c, prefix)
 }
