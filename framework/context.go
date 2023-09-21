@@ -92,7 +92,7 @@ func (ctx *Context) Value(key interface{}) interface{} {
 	return ctx.BaseContext().Value(key)
 }
 
-//SetParams 设置参数
+// SetParams 设置参数
 func (ctx *Context) SetParams(params map[string]string) {
 	ctx.params = params
 }
