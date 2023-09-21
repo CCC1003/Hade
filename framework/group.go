@@ -1,15 +1,15 @@
 package framework
 
-// 代表前缀分组
+// IGroup 代表前缀分组
 type IGroup interface {
 	Get(string, ...ControllerHandler)
 	Post(string, ...ControllerHandler)
 	Put(string, ...ControllerHandler)
 	Delete(string, ...ControllerHandler)
-	// 实现嵌套group
+	//Group 实现嵌套group
 	Group(string) IGroup
 
-	// 嵌套中间件
+	//Use 嵌套中间件
 	Use(middlewares ...ControllerHandler)
 }
 
@@ -21,7 +21,7 @@ type Group struct {
 	middlewares []ControllerHandler // 存放中间件
 }
 
-// 初始化Group
+// NewGroup 初始化Group
 func NewGroup(core *Core, prefix string) *Group {
 	return &Group{
 		core:        core,
@@ -31,12 +31,12 @@ func NewGroup(core *Core, prefix string) *Group {
 	}
 }
 
-// 注册中间件
+// Use 注册中间件
 func (g *Group) Use(middlewares ...ControllerHandler) {
 	g.middlewares = append(g.middlewares, middlewares...)
 }
 
-// 获取当前group的绝对路径
+// getAbsolutePrefix 获取当前group的绝对路径
 func (g *Group) getAbsolutePrefix() string {
 	if g.parent == nil {
 		return g.prefix
@@ -44,7 +44,7 @@ func (g *Group) getAbsolutePrefix() string {
 	return g.parent.getAbsolutePrefix() + g.prefix
 }
 
-// 获取某个group的middleware
+// getMiddlewares 获取某个group的middleware
 // 这里就是获取除了Get/Post/Put/Delete之外设置的middleware
 func (g *Group) getMiddlewares() []ControllerHandler {
 	if g.parent == nil {
