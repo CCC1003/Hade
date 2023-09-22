@@ -75,7 +75,7 @@ func (ctx *Context) Jsonp(obj interface{}) IResponse {
 	return ctx
 }
 
-//Xml xml输出
+// Xml xml输出
 func (ctx *Context) Xml(obj interface{}) IResponse {
 	byt, err := xml.Marshal(obj)
 	if err != nil {
@@ -86,7 +86,7 @@ func (ctx *Context) Xml(obj interface{}) IResponse {
 	return ctx
 }
 
-//Html html输出
+// Html html输出
 func (ctx *Context) Html(file string, obj interface{}) IResponse {
 	// 读取模版文件，创建template实例
 	t, err := template.New("output").ParseFiles(file)
@@ -102,7 +102,7 @@ func (ctx *Context) Html(file string, obj interface{}) IResponse {
 	return ctx
 }
 
-//Text string
+// Text string
 func (ctx *Context) Text(format string, values ...interface{}) IResponse {
 	out := fmt.Sprintf(format, values...)
 	ctx.SetHeader("Content-Type", "application/text")
@@ -110,19 +110,19 @@ func (ctx *Context) Text(format string, values ...interface{}) IResponse {
 	return ctx
 }
 
-//Redirect 重定向
+// Redirect 重定向
 func (ctx *Context) Redirect(path string) IResponse {
 	http.Redirect(ctx.responseWriter, ctx.request, path, http.StatusMovedPermanently)
 	return ctx
 }
 
-//SetHeader header
+// SetHeader header
 func (ctx *Context) SetHeader(key string, val string) IResponse {
 	ctx.responseWriter.Header().Add(key, val)
 	return ctx
 }
 
-//SetCookie Cookie
+// SetCookie Cookie
 func (ctx *Context) SetCookie(key string, val string, maxAge int, path string, domain string, secure bool, httpOnly bool) IResponse {
 	if path == "" {
 		path = "/"
@@ -140,13 +140,13 @@ func (ctx *Context) SetCookie(key string, val string, maxAge int, path string, d
 	return ctx
 }
 
-//SetStatus 设置状态码
+// SetStatus 设置状态码
 func (ctx *Context) SetStatus(code int) IResponse {
 	ctx.responseWriter.WriteHeader(code)
 	return ctx
 }
 
-//SetOkStatus 设置200状态
+// SetOkStatus 设置200状态
 func (ctx *Context) SetOkStatus() IResponse {
 	ctx.responseWriter.WriteHeader(http.StatusOK)
 	return ctx
