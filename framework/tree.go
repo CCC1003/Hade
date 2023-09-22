@@ -5,13 +5,12 @@ import (
 	"strings"
 )
 
-//Tree 代表树结构
+// Tree 代表树结构
 type Tree struct {
 	root *node // 根节点
-
 }
 
-//node 代表节点
+// node 代表节点
 type node struct {
 	isLast   bool                // 该节点是否能成为一个独立的uri, 是否自身就是一个终极节点
 	segment  string              // uri中的字符串
@@ -33,12 +32,12 @@ func NewTree() *Tree {
 	return &Tree{root}
 }
 
-//isWildSegment 判断一个segment是否是通用segment，即以:开头
+// isWildSegment 判断一个segment是否是通用segment，即以:开头
 func isWildSegment(segment string) bool {
 	return strings.HasPrefix(segment, ":")
 }
 
-//filterChildNodes 过滤下一层满足segment规则的子节点
+// filterChildNodes 过滤下一层满足segment规则的子节点
 func (n *node) filterChildNodes(segment string) []*node {
 	if len(n.childs) == 0 {
 		return nil
@@ -64,7 +63,7 @@ func (n *node) filterChildNodes(segment string) []*node {
 	return nodes
 }
 
-//matchNode 判断路由是否已经在节点的所有子节点树中存在了
+// matchNode 判断路由是否已经在节点的所有子节点树中存在了
 func (n *node) matchNode(uri string) *node {
 	// 使用分隔符将uri切割为两个部分
 	segments := strings.SplitN(uri, "/", 2)
@@ -162,7 +161,7 @@ func (tree *Tree) AddRouter(uri string, handlers []ControllerHandler) error {
 	return nil
 }
 
-//FindHandler 匹配uri
+// FindHandler 匹配uri
 func (tree *Tree) FindHandler(uri string) []ControllerHandler {
 	matchNode := tree.root.matchNode(uri)
 	if matchNode == nil {
