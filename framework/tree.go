@@ -161,14 +161,6 @@ func (tree *Tree) AddRouter(uri string, handlers []ControllerHandler) error {
 	return nil
 }
 
-// FindHandler 匹配uri
-func (tree *Tree) FindHandler(uri string) []ControllerHandler {
-	matchNode := tree.root.matchNode(uri)
-	if matchNode == nil {
-		return nil
-	}
-	return matchNode.handlers
-}
 func (n *node) parseParamsFromEndNode(uri string) map[string]string {
 	ret := map[string]string{}
 	segments := strings.Split(uri, "/")
