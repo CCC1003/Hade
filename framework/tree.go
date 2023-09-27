@@ -87,7 +87,6 @@ func (n *node) matchNode(uri string) *node {
 				return tn
 			}
 		}
-
 		// 都不是最后一个节点
 		return nil
 	}
