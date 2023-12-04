@@ -1,4 +1,4 @@
-package framework
+package Hin
 
 // IGroup 代表前缀分组
 type IGroup interface {

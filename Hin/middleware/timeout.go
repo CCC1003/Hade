@@ -1,15 +1,15 @@
 package middleware
 
 import (
-	"Hade/framework"
+	"Hade/Hin"
 	"context"
 	"fmt"
 	"log"
 	"time"
 )
 
-func Timeout(d time.Duration) framework.ControllerHandler {
-	return func(c *framework.Context) error {
+func Timeout(d time.Duration) Hin.ControllerHandler {
+	return func(c *Hin.Context) error {
 		finish := make(chan struct{}, 1)
 		panicChan := make(chan interface{}, 1)
 		// 执行业务逻辑前预操作：初始化超时context
