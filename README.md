@@ -1,6 +1,6 @@
 # Hade
 
-基于Go语言从0开发一个基础Web框架
+## Golang语言Web框架
 
 ### 一、使用Golang net-http标准库搭建Server
 
