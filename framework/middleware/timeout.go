@@ -32,7 +32,7 @@ func Timeout(d time.Duration) framework.ControllerHandler {
 		case p := <-panicChan:
 			c.WriterMux().Lock()
 			defer c.WriterMux().Unlock()
-			c.SetStatus(500).Json("time out")
+			c.SetStatus(500).Json("panic")
 			log.Println(p)
 		case <-finish:
 			fmt.Println("finish")
