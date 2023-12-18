@@ -27,7 +27,7 @@ func (s *Session) DB() *sql.DB {
 func (s *Session) Raw(sql string, values ...interface{}) *Session {
 	s.sql.WriteString(sql)
 	s.sql.WriteString(" ")
-	s.sqlVars = append(s.sqlVars, values)
+	s.sqlVars = append(s.sqlVars, values...)
 	return s
 }
 
