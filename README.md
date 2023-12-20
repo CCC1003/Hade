@@ -1,6 +1,6 @@
 # Hade
 
-## Hin -- http框架
+## Hin | http框架
 
 ### 一、使用Golang net-http标准库搭建Server
 
@@ -12,4 +12,4 @@
 
 ### 五、request&response:使用接口定义，response定义函数实现链式调用
 
-## Horm -- orm框架
+## Horm | orm框架
