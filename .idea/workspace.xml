@@ -6,7 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="27b9908f-58fa-4bce-93ae-f03617c2cd04" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Horm/dialect/mysql.go" beforeDir="false" afterPath="$PROJECT_DIR$/Horm/dialect/mysql.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Horm/horm.go" beforeDir="false" afterPath="$PROJECT_DIR$/Horm/horm.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Horm/schema/schema.go" beforeDir="false" afterPath="$PROJECT_DIR$/Horm/schema/schema.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Horm/session/raw.go" beforeDir="false" afterPath="$PROJECT_DIR$/Horm/session/raw.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,20 +57,11 @@
     ]
   }
 }]]></component>
-  <component name="RunManager" selected="Go Build.go build Hade">
+  <component name="RunManager" selected="Go Test.table_test.go">
     <configuration name="go build Hade" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="Hade" />
       <working_directory value="$PROJECT_DIR$" />
       <kind value="PACKAGE" />
-      <package value="Hade" />
-      <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$/main.go" />
-      <method v="2" />
-    </configuration>
-    <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
-      <module name="Hade" />
-      <working_directory value="$PROJECT_DIR$" />
-      <kind value="FILE" />
       <package value="Hade" />
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$/main.go" />
@@ -82,11 +76,47 @@
       <filePath value="$PROJECT_DIR$/Horm/session/raw.go" />
       <method v="2" />
     </configuration>
+    <configuration name="TestParse in Hade/Horm/schema" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="Hade" />
+      <working_directory value="$PROJECT_DIR$/Horm/schema" />
+      <root_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="Hade/Horm/schema" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTestParse\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestSession_CreateTable in Hade/Horm/session" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="Hade" />
+      <working_directory value="$PROJECT_DIR$/Horm/session" />
+      <root_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="Hade/Horm/session" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTestSession_CreateTable\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="table_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="Hade" />
+      <working_directory value="$PROJECT_DIR$/Horm/session" />
+      <root_directory value="$PROJECT_DIR$" />
+      <kind value="FILE" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/Horm/session/table_test.go" />
+      <framework value="gotest" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Test.table_test.go" />
+        <item itemvalue="Go Test.TestSession_CreateTable in Hade/Horm/session" />
         <item itemvalue="Go Build.go build Hade" />
+        <item itemvalue="Go Test.TestParse in Hade/Horm/schema" />
         <item itemvalue="Go Build.go build raw.go" />
-        <item itemvalue="Go Build.go build main.go" />
       </list>
     </recent_temporary>
   </component>

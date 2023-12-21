@@ -38,5 +38,5 @@ func (m *mysql) DataTypeOf(typ reflect.Value) string {
 }
 func (m *mysql) TableExistSQL(dbName, tableName string) (string, []interface{}) {
 	args := []interface{}{dbName, tableName}
-	return "select  TABLE_NAME  from  INFORMATION_SCHEMA . TABLES  where TABLE_SCHEMA =? and  TABLE_NAME = ?;", args
+	return "select  TABLE_NAME  from  INFORMATION_SCHEMA . TABLES  where TABLE_SCHEMA = ? and  TABLE_NAME = ?;", args
 }
