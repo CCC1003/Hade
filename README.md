@@ -1,6 +1,6 @@
 # Hade
 
-## Hin | http框架
+## Hin | web框架
 
 ### 一、使用Golang net-http标准库搭建Server
 

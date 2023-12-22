@@ -6,6 +6,11 @@ import (
 	_ "github.com/go-sql-driver/mysql"
 )
 
+type User struct {
+	Name string `horm:"primary key"`
+	Age  int
+}
+
 func main() {
 	//hin
 	//core := Hin.NewCore()
@@ -22,10 +27,15 @@ func main() {
 	//horm
 	engine, _ := Horm.NewEngine("mysql", "root:123456@tcp(8.130.85.112:3306)/Horm")
 	defer engine.Close()
-	s := engine.NewSession()
-	_, _ = s.Raw("DROP TABLE IF EXISTS User;").Exec()
-	_, _ = s.Raw("CREATE TABLE User(Name text);").Exec()
-	result, _ := s.Raw("INSERT INTO User(`Name`) values (?), (?)", "Wnag", "Sam").Exec()
+	s := engine.NewSession().Model(&User{})
+	_ = s.CreateTable()
+	result, _ := s.Raw("INSERT INTO User(`Name`) values (?), (?)", "cong", "Sam").Exec()
 	count, _ := result.RowsAffected()
 	fmt.Printf("Exec success,%d affected\n", count)
+	_ = s.DropTable()
+	if s.HasTable() {
+		fmt.Println(s.HasTable())
+	}
+	//_, _ = s.Raw("CREATE TABLE User(Name text);").Exec()
+
 }
