@@ -6,11 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="27b9908f-58fa-4bce-93ae-f03617c2cd04" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Horm/dialect/mysql.go" beforeDir="false" afterPath="$PROJECT_DIR$/Horm/dialect/mysql.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Horm/session/raw.go" beforeDir="false" afterPath="$PROJECT_DIR$/Horm/session/raw.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Horm/session/table.go" beforeDir="false" afterPath="$PROJECT_DIR$/Horm/session/table.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Horm/session/raw_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/Horm/session/raw_test.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +55,7 @@
     ]
   }
 }]]></component>
-  <component name="RunManager" selected="Go Build.go build Hade">
+  <component name="RunManager" selected="Go Test.TestSession_CreateTable in Hade/Horm/session">
     <configuration name="go build Hade" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="Hade" />
       <working_directory value="$PROJECT_DIR$" />
@@ -90,6 +86,18 @@
       <pattern value="^\QTestSession_CreateTable\E$" />
       <method v="2" />
     </configuration>
+    <configuration name="TestSession_CreateTable in Hade/Horm/session (2)" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="Hade" />
+      <working_directory value="$PROJECT_DIR$/Horm/session" />
+      <root_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="Hade/Horm/session" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTestSession_CreateTable\E$" />
+      <method v="2" />
+    </configuration>
     <configuration name="TestSession_CreateTable in Hade/Horm/session" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="Hade" />
       <working_directory value="$PROJECT_DIR$/Horm/session" />
@@ -102,23 +110,13 @@
       <pattern value="^\QTestSession_CreateTable\E$" />
       <method v="2" />
     </configuration>
-    <configuration name="table_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="Hade" />
-      <working_directory value="$PROJECT_DIR$/Horm/session" />
-      <root_directory value="$PROJECT_DIR$" />
-      <kind value="FILE" />
-      <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$/Horm/session/table_test.go" />
-      <framework value="gotest" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Test.TestSession_CreateTable in Hade/Horm/session" />
+        <item itemvalue="Go Test.TestSession_CreateTable in Hade/Horm/session (2)" />
         <item itemvalue="Go Build.go build Hade" />
         <item itemvalue="Go Test.TestSession_CreateTable in Hade/Horm/session (1)" />
         <item itemvalue="Go Build.go build main.go" />
-        <item itemvalue="Go Test.table_test.go" />
-        <item itemvalue="Go Test.TestSession_CreateTable in Hade/Horm/session" />
       </list>
     </recent_temporary>
   </component>
